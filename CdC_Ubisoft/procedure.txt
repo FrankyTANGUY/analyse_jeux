@@ -1,0 +1,15 @@
+CREATE VIEW Best_Games AS
+SELECT ventes, nom_jeux, année
+FROM jeux
+WHERE vente > 20 ;
+SELECT * FROM Best_Games;
+
+DELIMITER //
+CREATE PROCEDURE proc
+(IN var CHAR(50))
+BEGIN
+SELECT *
+FROM jeux
+WHERE annee =var;
+END //
+DELIMITER ;
